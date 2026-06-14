@@ -1,0 +1,11 @@
+{
+  "name": "servimex-ui",
+  "version": "1.0.0",
+  "description": "Servimex tailwind css build",
+  "scripts": {
+    "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/style.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.1"
+  }
+}

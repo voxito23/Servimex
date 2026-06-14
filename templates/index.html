@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Servimex{% endblock %}
+
+{% block content %}
+<!-- Hero Section con Efecto Radar/Slow Spin -->
+<section class="relative h-[85vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80')] bg-cover bg-center transition-transform duration-[10s] hover:scale-105"></div>
+    
+    <!-- Gradient Overlay con Radar Spin -->
+    <div class="absolute inset-0 bg-servimex-navy/80 backdrop-blur-[2px]"></div>
+    <div class="absolute inset-[-50%] bg-[conic-gradient(from_0deg,transparent_0deg,rgba(51,133,255,0.1)_90deg,transparent_180deg,rgba(0,77,153,0.2)_270deg,transparent_360deg)] animate-slow-spin"></div>
+
+    <div class="relative z-10 px-4" data-aos="fade-up" data-aos-duration="1200">
+        <div class="hero-content">
+        <div class="animate-fade-up">
+            <span class="inline-block px-5 py-2 rounded-full text-sm font-semibold tracking-wider uppercase mb-8" style="background: var(--accent-surface); color: var(--accent); border: 1px solid var(--accent-surface-strong);">
+                <i class="fa-solid fa-industry mr-2"></i>Servicios Industriales
+            </span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold text-primary mb-6 tracking-tight leading-[1.05] animate-fade-up-delay-1">
+            Bienvenidos a<br>
+            <span class="hero-text-gradient">SERVIMEX</span>
+        </h1>
+        <p class="text-lg md:text-xl text-secondary font-light tracking-widest mb-12 uppercase animate-fade-up-delay-2">
+            Servicios Industriales de Mexicali
+        </p>
+        <!-- Botón Premium (Animado) -->
+        <a href="{{ url_for('servicios') }}" class="btn-custom inline-flex items-center px-10 py-5 rounded-xl font-bold text-lg group">
+            Nuestros Servicios 
+            <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform duration-300"></i>
+        </a>
+    </div>
+    </div>
+</section>
+
+<!-- Highlights Bar Glassmorphism -->
+<section class="relative z-20 -mt-20 px-4 pb-16">
+    <div class="max-w-6xl mx-auto glass-panel rounded-2xl p-10 shadow-2xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div data-aos="zoom-in" data-aos-delay="0">
+                <i class="fa-solid fa-gears text-4xl text-servimex-blue mb-4"></i>
+                <h3 class="font-heading font-bold text-servimex-navy text-lg uppercase tracking-wide">Soluciones</h3>
+                <p class="text-sm text-gray-500 mt-2">Integrales e Innovadoras</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <i class="fa-solid fa-medal text-4xl text-servimex-blue mb-4"></i>
+                <h3 class="font-heading font-bold text-servimex-navy text-lg uppercase tracking-wide">Calidad</h3>
+                <p class="text-sm text-gray-500 mt-2">Estándares Internacionales</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-solid fa-compass-drafting text-4xl text-servimex-blue mb-4"></i>
+                <h3 class="font-heading font-bold text-servimex-navy text-lg uppercase tracking-wide">Diseño</h3>
+                <p class="text-sm text-gray-500 mt-2">Precisión y Eficiencia</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="300">
+                <i class="fa-solid fa-helmet-safety text-4xl text-servimex-blue mb-4"></i>
+                <h3 class="font-heading font-bold text-servimex-navy text-lg uppercase tracking-wide">Instalación</h3>
+                <p class="text-sm text-gray-500 mt-2">Seguridad Absoluta</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Misión, Visión, Valores Cards -->
+<section class="py-24 bg-servimex-surface relative overflow-hidden">
+    <!-- Decorative background element -->
+    <div class="absolute top-0 right-0 -mr-48 -mt-48 w-96 h-96 bg-servimex-blue opacity-5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 -ml-48 -mb-48 w-96 h-96 bg-servimex-dark opacity-5 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-heading font-extrabold text-servimex-navy mb-4">Nuestra Identidad</h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-servimex-blue to-servimex-light mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Misión -->
+            <div class="bg-white rounded-3xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-500 group" data-aos="fade-up" data-aos-delay="0">
+                <div class="w-16 h-16 bg-servimex-surface rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <i class="fa-solid fa-bullseye text-3xl text-servimex-blue"></i>
+                </div>
+                <h3 class="text-2xl font-heading font-bold text-servimex-navy mb-4">Misión</h3>
+                <p class="text-gray-600 leading-relaxed font-light">
+                    Proporcionar servicios de instalación electromecánica, pailería y soldadura con los más altos estándares de calidad, asegurando la satisfacción total de nuestros clientes en la región.
+                </p>
+            </div>
+
+            <!-- Visión -->
+            <div class="bg-white rounded-3xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-500 group transform md:-translate-y-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-gradient-to-br from-servimex-blue to-servimex-dark rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-inner">
+                    <i class="fa-solid fa-eye text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-heading font-bold text-servimex-navy mb-4">Visión</h3>
+                <p class="text-gray-600 leading-relaxed font-light">
+                    Convertirnos en la empresa líder y referente de servicios industriales a nivel regional, destacando siempre por nuestra excelencia operativa, innovación y compromiso inquebrantable.
+                </p>
+            </div>
+
+            <!-- Valores -->
+            <div class="bg-white rounded-3xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-500 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 bg-servimex-surface rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <i class="fa-solid fa-handshake text-3xl text-servimex-blue"></i>
+                </div>
+                <h3 class="text-2xl font-heading font-bold text-servimex-navy mb-4">Valores</h3>
+                <ul class="space-y-3 text-gray-600 font-light">
+                    <li class="flex items-center"><i class="fa-solid fa-check text-servimex-light mr-3 text-sm"></i> Integridad y Ética</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-servimex-light mr-3 text-sm"></i> Calidad Superior</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-servimex-light mr-3 text-sm"></i> Compromiso y Lealtad</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-servimex-light mr-3 text-sm"></i> Trabajo en Equipo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

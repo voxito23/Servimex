@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Servicios - Servimex{% endblock %}
+
+{% block content %}
+<!-- Minimalist Header (Premium Style) -->
+<section class="pt-32 pb-16 bg-white relative overflow-hidden">
+    <!-- Subtle Top Gradient -->
+    <div class="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-servimex-surface to-transparent"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-down">
+        <h1 class="text-5xl md:text-6xl font-heading font-extrabold text-servimex-navy mb-6 tracking-tight">Nuestros <span class="text-transparent bg-clip-text bg-gradient-to-r from-servimex-blue to-servimex-light">Servicios</span></h1>
+        <div class="w-24 h-1.5 bg-gradient-to-r from-servimex-blue to-servimex-light mx-auto rounded-full mb-8"></div>
+        <p class="text-xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">Proporcionamos soluciones integrales de grado industrial con un enfoque absoluto en la calidad, seguridad y eficiencia estructural.</p>
+    </div>
+</section>
+
+<!-- Services Editorial Layout (Alternating) -->
+<section class="py-20 bg-servimex-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
+        
+        <!-- Service 1: Right Image -->
+        <div class="flex flex-col lg:flex-row items-center gap-16 group" data-aos="fade-up">
+            <div class="lg:w-1/2 space-y-8 order-2 lg:order-1">
+                <div class="w-20 h-20 rounded-2xl bg-white shadow-xl flex items-center justify-center group-hover:animate-glow-pulse">
+                    <i class="fa-solid fa-industry text-4xl text-servimex-blue"></i>
+                </div>
+                <h2 class="text-4xl font-heading font-bold text-servimex-navy">Montajes Industriales</h2>
+                <p class="text-gray-600 text-lg leading-relaxed font-light">Ejecución de precisión para maquinaria pesada, líneas de producción y estructuras metálicas de gran escala. Garantizamos alineación milimétrica y cumplimiento de normativas internacionales de seguridad y durabilidad.</p>
+                <ul class="space-y-3 text-gray-500">
+                    <li class="flex items-center"><i class="fa-solid fa-arrow-right text-servimex-light mr-3"></i> Maquinaria Pesada</li>
+                    <li class="flex items-center"><i class="fa-solid fa-arrow-right text-servimex-light mr-3"></i> Naves Industriales</li>
+                </ul>
+            </div>
+            <div class="lg:w-1/2 order-1 lg:order-2">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" alt="Montajes Industriales" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-servimex-navy mix-blend-multiply opacity-20"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2: Left Image -->
+        <div class="flex flex-col lg:flex-row items-center gap-16 group" data-aos="fade-up">
+            <div class="lg:w-1/2">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80" alt="Instalaciones Electromecánicas" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-servimex-navy mix-blend-multiply opacity-20"></div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 space-y-8">
+                <div class="w-20 h-20 rounded-2xl bg-white shadow-xl flex items-center justify-center group-hover:animate-glow-pulse">
+                    <i class="fa-solid fa-bolt text-4xl text-servimex-blue"></i>
+                </div>
+                <h2 class="text-4xl font-heading font-bold text-servimex-navy">Instalaciones Electromecánicas</h2>
+                <p class="text-gray-600 text-lg leading-relaxed font-light">Diseño e implementación de sistemas eléctricos de alta y baja tensión, integración de controles automatizados y cableado estructurado para optimizar la funcionalidad de la planta industrial.</p>
+                <ul class="space-y-3 text-gray-500">
+                    <li class="flex items-center"><i class="fa-solid fa-arrow-right text-servimex-light mr-3"></i> Subestaciones</li>
+                    <li class="flex items-center"><i class="fa-solid fa-arrow-right text-servimex-light mr-3"></i> Control de Procesos</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Service 3: Right Image -->
+        <div class="flex flex-col lg:flex-row items-center gap-16 group" data-aos="fade-up">
+            <div class="lg:w-1/2 space-y-8 order-2 lg:order-1">
+                <div class="w-20 h-20 rounded-2xl bg-white shadow-xl flex items-center justify-center group-hover:animate-glow-pulse">
+                    <i class="fa-solid fa-fire-burner text-4xl text-servimex-blue"></i>
+                </div>
+                <h2 class="text-4xl font-heading font-bold text-servimex-navy">Pailería y Soldadura</h2>
+                <p class="text-gray-600 text-lg leading-relaxed font-light">Fabricación de piezas metálicas especializadas, tanques, tolvas y estructuras soldadas. Aplicamos soldadura certificada (TIG, MIG, Arco) para garantizar integridad estructural bajo condiciones extremas.</p>
+                <ul class="space-y-3 text-gray-500">
+                    <li class="flex items-center"><i class="fa-solid fa-arrow-right text-servimex-light mr-3"></i> Tuberías de Presión</li>
+                    <li class="flex items-center"><i class="fa-solid fa-arrow-right text-servimex-light mr-3"></i> Tanques de Almacenamiento</li>
+                </ul>
+            </div>
+            <div class="lg:w-1/2 order-1 lg:order-2">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80" alt="Pailería y Soldadura" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-servimex-navy mix-blend-multiply opacity-20"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

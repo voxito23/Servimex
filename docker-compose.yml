@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  flask_app:
+    build: .
+    container_name: servimex_flask
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      - FLASK_DEBUG=true
+
+  tailwind_builder:
+    image: node:20-alpine
+    container_name: servimex_tailwind
+    tty: true
+    stdin_open: true
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "npm install && npx tailwindcss -i ./static/css/input.css -o ./static/css/style.css --watch"
+    restart: always
