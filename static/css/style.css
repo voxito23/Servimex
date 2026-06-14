@@ -27,6 +27,31 @@
   --tw-content: '';
 }
 
+/* ==========================================
+     CSS VARIABLES
+     ========================================== */
+:root {
+  --bg-primary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --text-primary: #0A192F;
+  --text-secondary: #64748B;
+  --border-default: #E2E8F0;
+  --accent: #004d99;
+  --accent-surface: rgba(0, 77, 153, 0.08);
+  --accent-surface-strong: rgba(0, 77, 153, 0.2);
+}
+
+.dark {
+  --bg-primary: #0B1120;
+  --bg-card: #0F172A;
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --border-default: #1E293B;
+  --accent: #3B82F6;
+  --accent-surface: rgba(59, 130, 246, 0.15);
+  --accent-surface-strong: rgba(59, 130, 246, 0.3);
+}
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -1843,8 +1868,323 @@ html {
 }
 
 .dark .logo-transparent {
-  mix-blend-mode: screen;
-  filter: brightness(0) invert(1);
+  mix-blend-mode: normal;
+}
+
+@keyframes float-wave {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(1.5deg); }
+}
+.animate-float-wave { animation: float-wave 3.5s ease-in-out infinite; }
+
+@keyframes falling-drops {
+    0% { transform: translate3d(0, -50px, 0); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translate3d(0, 100vh, 0); opacity: 0; }
+}
+
+/* ==========================================
+     NAV LINK BUTTON (Boxicons Style)
+     ========================================== */
+
+.nav-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-link-btn:hover {
+  color: #004d99;
+  background-color: rgba(0, 77, 153, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 77, 153, 0.12);
+}
+
+.dark .nav-link-btn {
+  color: #94A3B8;
+}
+
+.dark .nav-link-btn:hover {
+  color: #60A5FA;
+  background-color: rgba(96, 165, 250, 0.12);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.15);
+}
+
+/* Mobile hamburger */
+.nav-mobile-hamburger {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.nav-mobile-hamburger:hover {
+  color: #004d99;
+}
+
+.dark .nav-mobile-hamburger {
+  color: #94A3B8;
+}
+
+.dark .nav-mobile-hamburger:hover {
+  color: #60A5FA;
+}
+
+/* ==========================================
+     MOBILE MENU PANEL
+     ========================================== */
+
+.mobile-menu-panel {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-default);
+  transition: background-color 0.35s ease;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  background: rgba(0, 77, 153, 0.06);
+  color: #004d99;
+}
+
+.dark .mobile-nav-link:hover {
+  background: rgba(96, 165, 250, 0.1);
+  color: #60A5FA;
+}
+
+/* ==========================================
+     DARK MODE — HEADER GLASS
+     ========================================== */
+
+.dark .glass {
+  background: rgba(11, 17, 32, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+}
+
+/* ==========================================
+     DARK MODE — GLASS PANEL
+     ========================================== */
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(96, 165, 250, 0.1);
+}
+
+/* ==========================================
+     DARK MODE — FOOTER
+     ========================================== */
+
+.footer-section {
+  background-color: #0A192F;
+  color: #FFFFFF;
+  transition: background-color 0.35s ease;
+}
+
+.dark .footer-section {
+  background-color: #070D1A;
+  border-top-color: #60A5FA;
+}
+
+.footer-text {
+  color: #9CA3AF;
+}
+
+.footer-link {
+  color: #9CA3AF;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #FFFFFF;
+}
+
+.footer-divider {
+  border-top: 1px solid #1F2937;
+}
+
+.dark .footer-divider {
+  border-top-color: #1E293B;
+}
+
+.footer-muted {
+  color: #6B7280;
+}
+
+.footer-social {
+  color: #6B7280;
+  transition: color 0.3s ease;
+}
+
+.footer-social:hover {
+  color: #FFFFFF;
+}
+
+/* ==========================================
+     DARK MODE — SECTIONS & CARDS (Index)
+     ========================================== */
+
+.dark .bg-servimex-surface {
+  background-color: #0F172A !important;
+}
+
+.dark .bg-white {
+  background-color: var(--bg-card) !important;
+}
+
+.dark .text-servimex-navy {
+  color: #F1F5F9 !important;
+}
+
+.dark .text-gray-600 {
+  color: #94A3B8 !important;
+}
+
+.dark .text-gray-500 {
+  color: #64748B !important;
+}
+
+.dark .text-gray-700 {
+  color: #CBD5E1 !important;
+}
+
+.dark .border-gray-100 {
+  border-color: #1E293B !important;
+}
+
+.dark .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==========================================
+     DARK MODE — FORM INPUTS (Contact)
+     ========================================== */
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #1E293B !important;
+  color: #F1F5F9 !important;
+  border-color: #334155 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748B !important;
+}
+
+.dark input:focus,
+.dark textarea:focus {
+  background-color: #0F172A !important;
+  border-color: #60A5FA !important;
+}
+
+.dark label {
+  color: #CBD5E1 !important;
+}
+
+/* ==========================================
+     DARK MODE — SCROLLBAR
+     ========================================== */
+
+.dark ::-webkit-scrollbar-track {
+  background: #0B1120;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #60A5FA, #3B82F6);
+  border: 3px solid #0B1120;
+  background-clip: padding-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3B82F6, #2563EB);
+  border: 2px solid #0B1120;
+}
+
+html.dark {
+  scrollbar-color: #3B82F6 #0B1120;
+}
+
+/* ==========================================
+     DARK MODE — BTN CUSTOM
+     ========================================== */
+
+.dark .btn-custom {
+  background-color: #2563EB;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.dark .btn-custom:hover {
+  background-color: #1D4ED8;
+  box-shadow: 0 20px 25px -5px rgba(29, 78, 216, 0.35);
+}
+
+/* ==========================================
+     DARK MODE — CONTACT ICON BOXES
+     ========================================== */
+
+.dark .bg-servimex-surface {
+  background-color: #1E293B !important;
+}
+
+.dark .group:hover .group-hover\:bg-servimex-blue {
+  background-color: #2563EB !important;
+}
+
+.dark .text-servimex-blue {
+  color: #60A5FA !important;
+}
+
+.dark .text-servimex-light {
+  color: #93C5FD !important;
+}
+
+/* ==========================================
+     DARK MODE — HIGHLIGHTS BAR (Index)
+     ========================================== */
+
+.dark .bg-servimex-navy\/80 {
+  background-color: rgba(15, 23, 42, 0.85) !important;
+}
+
+/* ==========================================
+     DARK MODE — GRADIENT ACCENTS
+     ========================================== */
+
+.dark .bg-gradient-to-r.from-servimex-blue.to-servimex-light {
+  background-image: linear-gradient(to right, #3B82F6, #60A5FA) !important;
+}
+
+.dark .from-servimex-surface {
+  --tw-gradient-from: #0F172A;
+  --tw-gradient-to: rgba(15, 23, 42, 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .hover\:scale-105:hover{
