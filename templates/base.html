@@ -274,6 +274,15 @@
             window.addEventListener('scroll', () => {
                 const currentScrollY = window.scrollY;
 
+                // Smart Hide logic: hide when scrolling down, show when scrolling up
+                if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                    // Scrolling down
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    navbar.style.transform = 'translateY(0)';
+                }
+
                 // Agregar sombra si no está en la cima
                 if (currentScrollY > 20) {
                     navbar.classList.add('shadow-md');
