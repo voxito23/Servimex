@@ -60,13 +60,13 @@
                     </a>
                     
                     <nav class="hidden md:flex space-x-2 items-center">
-                        <a href="{{ url_for('home') }}" class="nav-link-btn">
+                        <a href="{{ url_for('home') }}" class="nav-link-btn {% if request.endpoint == 'home' %}active-nav-link{% endif %}">
                             <i class='bx bx-home'></i> Inicio
                         </a>
-                        <a href="{{ url_for('servicios') }}" class="nav-link-btn">
+                        <a href="{{ url_for('servicios') }}" class="nav-link-btn {% if request.endpoint == 'servicios' %}active-nav-link{% endif %}">
                             <i class='bx bx-wrench'></i> Servicios
                         </a>
-                        <a href="{{ url_for('contacto') }}" class="nav-link-btn">
+                        <a href="{{ url_for('contacto') }}" class="nav-link-btn {% if request.endpoint == 'contacto' %}active-nav-link{% endif %}">
                             <i class='bx bx-envelope'></i> Contacto
                         </a>
 
@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        <a href="{{ url_for('contacto') }}" class="btn-custom flex items-center ml-4 px-6 py-2.5 rounded-full font-semibold text-sm uppercase tracking-wider">
+                        <a href="{{ url_for('contacto') }}#formulario" class="btn-custom flex items-center ml-4 px-6 py-2.5 rounded-full font-semibold text-sm uppercase tracking-wider">
                             <span>Cotizar</span>
                             <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
                         </a>
@@ -101,7 +101,7 @@
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mobile-menu-panel absolute w-full shadow-xl">
+            <div id="mobile-menu" class="hidden md:hidden mobile-menu-panel absolute w-full shadow-xl bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-gray-800">
                 <div class="px-4 pt-2 pb-6 space-y-2">
                     <a href="{{ url_for('home') }}" class="mobile-nav-link flex items-center gap-3">
                         <i class='bx bx-home text-xl'></i> Inicio
@@ -112,7 +112,7 @@
                     <a href="{{ url_for('contacto') }}" class="mobile-nav-link flex items-center gap-3">
                         <i class='bx bx-envelope text-xl'></i> Contacto
                     </a>
-                    <a href="{{ url_for('contacto') }}" class="btn-custom block rounded-xl text-center py-3 mt-4 font-semibold">
+                    <a href="{{ url_for('contacto') }}#formulario" class="block w-full text-center bg-servimex-blue hover:bg-blue-700 text-white px-3 py-2 rounded-md text-base font-medium transition-colors">
                         <i class='bx bx-send mr-1'></i> Cotizar
                     </a>
                 </div>
@@ -127,40 +127,45 @@
         <!-- Footer -->
         <footer class="footer-section pt-16 pb-8 border-t-[6px] border-servimex-blue">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div data-aos="fade-up" data-aos-delay="0">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                    <div data-aos="fade-up" data-aos-delay="0" class="flex flex-col items-center md:items-start md:col-span-1">
                         <img src="https://0201.nccdn.net/1_2/000/000/0b8/12e/logo.png" alt="Servimex Logo" class="h-12 w-auto mb-6 logo-transparent drop-shadow-md" loading="lazy">
-                        <p class="footer-text text-sm leading-relaxed">
+                        <p class="footer-text text-sm leading-relaxed text-center md:text-justify">
                             Líderes en montajes e instalaciones electromecánicas, pailería, herrería estructural e instrumentación industrial en Mexicali.
                         </p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="text-lg font-heading font-bold mb-6 text-white uppercase tracking-wider">Enlaces</h4>
-                        <ul class="space-y-3">
-                            <li><a href="{{ url_for('home') }}" class="footer-link flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-servimex-blue"></i> Inicio</a></li>
-                            <li><a href="{{ url_for('servicios') }}" class="footer-link flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-servimex-blue"></i> Servicios</a></li>
-                            <li><a href="{{ url_for('contacto') }}" class="footer-link flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-servimex-blue"></i> Contacto</a></li>
-                        </ul>
-                    </div>
-                    <div data-aos="fade-up" data-aos-delay="200">
-                        <h4 class="text-lg font-heading font-bold mb-6 text-white uppercase tracking-wider">Contacto</h4>
-                        <ul class="space-y-4 text-sm">
-                            <li class="flex items-start footer-text">
-                                <i class="fa-solid fa-location-dot mt-1 mr-3 text-servimex-blue"></i>
-                                <span>Mexicali, Baja California, México</span>
-                            </li>
-                            <li class="flex items-center footer-text">
-                                <i class="fa-solid fa-envelope mr-3 text-servimex-blue"></i>
-                                <a href="mailto:contacto@servimexbc.com.mx" class="footer-link">contacto@servimexbc.com.mx</a>
-                            </li>
-                        </ul>
+                    
+                    <!-- Contenedor agrupado para Enlaces y Contacto (Lado a lado en móvil) -->
+                    <div class="col-span-1 md:col-span-2 grid grid-cols-5 md:grid-cols-2 gap-4 md:gap-12">
+                        <div data-aos="fade-up" data-aos-delay="100" class="col-span-2 md:col-span-1 text-left">
+                            <h4 class="text-sm md:text-lg font-heading font-bold mb-4 md:mb-6 text-white uppercase tracking-wider">Enlaces</h4>
+                            <ul class="space-y-3">
+                                <li><a href="{{ url_for('home') }}" class="footer-link flex items-center text-xs md:text-sm"><i class="fa-solid fa-chevron-right text-[10px] md:text-xs mr-2 text-servimex-blue"></i> Inicio</a></li>
+                                <li><a href="{{ url_for('servicios') }}" class="footer-link flex items-center text-xs md:text-sm"><i class="fa-solid fa-chevron-right text-[10px] md:text-xs mr-2 text-servimex-blue"></i> Servicios</a></li>
+                                <li><a href="{{ url_for('contacto') }}" class="footer-link flex items-center text-xs md:text-sm"><i class="fa-solid fa-chevron-right text-[10px] md:text-xs mr-2 text-servimex-blue"></i> Contacto</a></li>
+                            </ul>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="200" class="col-span-3 md:col-span-1 text-left">
+                            <h4 class="text-sm md:text-lg font-heading font-bold mb-4 md:mb-6 text-white uppercase tracking-wider">Contacto</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start footer-text text-xs md:text-sm">
+                                    <i class="fa-solid fa-location-dot mt-1 mr-2 text-servimex-blue"></i>
+                                    <span>Mexicali, Baja C., México</span>
+                                </li>
+                                <li class="flex items-start footer-text text-xs md:text-sm">
+                                    <i class="fa-solid fa-envelope mt-0.5 mr-2 text-servimex-blue"></i>
+                                    <a href="mailto:contacto@servimexbc.com.mx" class="footer-link break-words leading-tight">contacto@servimexbc.com.mx</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="footer-divider mt-12 pt-8 text-center text-sm flex flex-col md:flex-row justify-between items-center">
                     <p class="footer-muted">&copy; 2026 Servicios Industriales de Mexicali. Todos los derechos reservados.</p>
                     <div class="mt-4 md:mt-0 flex space-x-4">
-                        <a href="#" class="footer-social"><i class="fa-brands fa-linkedin text-xl"></i></a>
-                        <a href="#" class="footer-social"><i class="fa-brands fa-facebook text-xl"></i></a>
+                        <a href="https://www.facebook.com/search/top?q=servimex%20mxl" target="_blank" rel="noopener noreferrer" class="footer-social hover:text-[#1877F2]"><i class="fa-brands fa-facebook text-xl"></i></a>
+                        <a href="https://wa.me/526866041463" target="_blank" rel="noopener noreferrer" class="footer-social hover:text-[#25D366]"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                        <a href="https://www.instagram.com/servi.mex.mxli/" target="_blank" rel="noopener noreferrer" class="footer-social hover:text-[#E1306C]"><i class="fa-brands fa-instagram text-xl"></i></a>
                     </div>
                 </div>
             </div>
@@ -174,9 +179,10 @@
             // Inicializar animaciones
             AOS.init({
                 once: true,
-                offset: 50,
-                duration: 800,
+                offset: 100,
+                duration: 1000,
                 easing: 'ease-out-cubic',
+                delay: 50,
             });
 
             // Remover loader
@@ -187,19 +193,44 @@
                     loader.style.opacity = '0';
                     setTimeout(() => {
                         loader.style.display = 'none';
-                        if(content) content.style.opacity = '1';
+                        if(content) {
+                            content.style.opacity = '1';
+                            // Recalcular AOS cuando el contenido es visible
+                            AOS.refresh();
+                        }
                     }, 500);
                 }
             }, 500);
 
-            // Navbar scroll effect
+            // Navbar scroll effect & Smart Hide
             const navbar = document.getElementById('navbar');
+            let lastScrollY = window.scrollY;
+
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 20) {
+                const currentScrollY = window.scrollY;
+
+                // Agregar sombra si no está en la cima
+                if (currentScrollY > 20) {
                     navbar.classList.add('shadow-md');
                 } else {
                     navbar.classList.remove('shadow-md');
                 }
+
+                // Ocultar al bajar, mostrar al subir (Smart Header)
+                if (currentScrollY > 100) {
+                    if (currentScrollY > lastScrollY) {
+                        // Scrolling down
+                        navbar.style.transform = 'translateY(-100%)';
+                    } else {
+                        // Scrolling up
+                        navbar.style.transform = 'translateY(0)';
+                    }
+                } else {
+                    // Siempre mostrar si estamos cerca del top
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = currentScrollY;
             });
 
             // Mobile menu toggle
@@ -253,5 +284,8 @@
             if (toggleBtnM) toggleBtnM.addEventListener('click', toggleTheme);
         });
     </script>
+    
+    <!-- Vanilla Tilt JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 </body>
 </html>

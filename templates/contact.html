@@ -4,16 +4,43 @@
 
 {% block content %}
 <!-- Minimalist Header (Premium Style) -->
-<section class="pt-32 pb-16 bg-white relative overflow-hidden">
+<section class="bg-servimex-surface dark:bg-slate-800 relative pt-32 pb-24 flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0" style="background-image: url('/static/img/hero_contact.png'); background-size: cover; background-position: center; filter: blur(2px); opacity: 0.5; transform: scale(1.02); mask-image: linear-gradient(to bottom, black 60%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);"></div>
+    
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 hero-overlay transition-colors duration-300" style="mask-image: linear-gradient(to bottom, black 60%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);"></div>
+
+    
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-down">
-        <h1 class="text-5xl md:text-6xl font-heading font-extrabold text-servimex-navy mb-6 tracking-tight">Contacto</h1>
-        <div class="w-24 h-1.5 bg-gradient-to-r from-servimex-blue to-servimex-light mx-auto rounded-full mb-8"></div>
-        <p class="text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed">Estamos a su entera disposición. Escríbanos para discutir los requerimientos de su próximo proyecto industrial.</p>
+        <h1 class="text-5xl md:text-6xl font-heading font-extrabold text-white mb-4 tracking-tight drop-shadow-md"><span class="hero-servimex-gradient-animated drop-shadow-sm inline-block pb-1">Contacto</span></h1>
+        
+        <!-- Premium Laser Beam Line (Igual al Index) -->
+        <div class="flex items-center justify-center mb-8" style="gap: 15px;">
+            <!-- Laser Izquierda -->
+            <div class="w-24 md:w-32 h-1 relative animate-pulse">
+                <div class="absolute inset-0 line-animated-gradient rounded-full" style="-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%); mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%);"></div>
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-2 bg-blue-600 blur-sm"></div>
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-1 bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,1)]"></div>
+            </div>
+            
+            <!-- Punto central resplandeciente -->
+            <div class="w-1.5 h-1.5 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,1)] animate-pulse"></div>
+
+            <!-- Laser Derecha -->
+            <div class="w-24 md:w-32 h-1 relative animate-pulse">
+                <div class="absolute inset-0 line-animated-gradient rounded-full" style="-webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%); mask-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 40%);"></div>
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-2 bg-blue-600 blur-sm"></div>
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-1 bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,1)]"></div>
+            </div>
+        </div>
+
+        <p class="text-xl text-white max-w-2xl mx-auto font-bold leading-relaxed drop-shadow [text-shadow:_0px_2px_8px_rgba(0,0,0,0.8)] dark:[text-shadow:none]">Estamos a su entera disposición. Escríbanos para discutir los requerimientos de su próximo proyecto industrial.</p>
     </div>
 </section>
 
 <!-- Contact Form Section -->
-<section class="py-16 bg-servimex-surface relative">
+<section class="py-16 bg-servimex-surface dark:bg-slate-800 relative">
     <div class="absolute inset-0 bg-wave-gradient opacity-[0.03]"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -21,61 +48,69 @@
             
             <!-- Information Panel (Left) -->
             <div class="lg:col-span-5 space-y-8" data-aos="fade-right">
-                <div class="bg-white rounded-3xl p-10 shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-500">
-                    <h3 class="text-3xl font-heading font-bold text-servimex-navy mb-10">Información Directa</h3>
+                <div class="bg-white dark:bg-[#0F172A] rounded-3xl p-10 shadow-xl border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-shadow duration-500">
+                    <h3 class="text-3xl font-heading font-bold text-servimex-navy dark:text-white mb-10">Información Directa</h3>
                     
                     <div class="space-y-8">
                         <div class="flex items-start group">
-                            <div class="flex-shrink-0 w-14 h-14 bg-servimex-surface rounded-2xl flex items-center justify-center text-servimex-blue group-hover:bg-servimex-blue group-hover:text-white transition-colors duration-300">
+                            <div class="flex-shrink-0 w-14 h-14 bg-servimex-surface dark:bg-slate-800 rounded-2xl flex items-center justify-center text-servimex-blue group-hover:bg-servimex-blue group-hover:text-white transition-colors duration-300">
                                 <i class="fa-solid fa-phone text-2xl"></i>
                             </div>
                             <div class="ml-6">
-                                <h4 class="text-lg font-bold text-servimex-navy">Teléfono</h4>
-                                <p class="text-gray-500 mt-1">(686) 123-4567</p>
+                                <h4 class="text-lg font-bold text-servimex-navy dark:text-white">Teléfono</h4>
+                                <p class="text-gray-500 dark:text-gray-300 mt-1">(686) 123-4567</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start group">
-                            <div class="flex-shrink-0 w-14 h-14 bg-servimex-surface rounded-2xl flex items-center justify-center text-servimex-blue group-hover:bg-servimex-blue group-hover:text-white transition-colors duration-300">
+                            <div class="flex-shrink-0 w-14 h-14 bg-servimex-surface dark:bg-slate-800 rounded-2xl flex items-center justify-center text-servimex-blue group-hover:bg-servimex-blue group-hover:text-white transition-colors duration-300">
                                 <i class="fa-solid fa-envelope text-2xl"></i>
                             </div>
                             <div class="ml-6">
-                                <h4 class="text-lg font-bold text-servimex-navy">Correo Electrónico</h4>
-                                <a href="mailto:contacto@servimexbc.com.mx" class="text-gray-500 hover:text-servimex-blue transition-colors mt-1 block">contacto@servimexbc.com.mx</a>
+                                <h4 class="text-lg font-bold text-servimex-navy dark:text-white">Correo Electrónico</h4>
+                                <a href="mailto:contacto@servimexbc.com.mx" class="text-gray-500 dark:text-gray-300 hover:text-servimex-blue transition-colors mt-1 block">contacto@servimexbc.com.mx</a>
                             </div>
                         </div>
                         
                         <div class="flex items-start group">
-                            <div class="flex-shrink-0 w-14 h-14 bg-servimex-surface rounded-2xl flex items-center justify-center text-servimex-blue group-hover:bg-servimex-blue group-hover:text-white transition-colors duration-300">
+                            <div class="flex-shrink-0 w-14 h-14 bg-servimex-surface dark:bg-slate-800 rounded-2xl flex items-center justify-center text-servimex-blue group-hover:bg-servimex-blue group-hover:text-white transition-colors duration-300">
                                 <i class="fa-solid fa-location-dot text-2xl"></i>
                             </div>
                             <div class="ml-6">
-                                <h4 class="text-lg font-bold text-servimex-navy">Ubicación</h4>
-                                <p class="text-gray-500 mt-1 leading-relaxed">Mexicali, Baja California, México</p>
+                                <h4 class="text-lg font-bold text-servimex-navy dark:text-white">Ubicación</h4>
+                                <p class="text-gray-500 dark:text-gray-300 mt-1 leading-relaxed">Mexicali, Baja California, México</p>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- AI Contact Image -->
+                    <div class="mt-12 rounded-2xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800">
+                        <img src="{{ url_for('static', filename='img/contact_support.png') }}" alt="Soporte Servimex" class="w-full h-[320px] object-cover">
                     </div>
                 </div>
             </div>
             
             <!-- Contact Form Panel (Right) -->
             <div class="lg:col-span-7" data-aos="fade-left">
-                <div class="bg-white rounded-3xl p-10 lg:p-12 shadow-xl border border-gray-100">
-                    <form action="#" method="POST" class="space-y-6">
+                <div class="bg-white dark:bg-[#0F172A] rounded-3xl p-10 lg:p-12 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col justify-between h-full">
+                    <h3 class="text-3xl font-heading font-bold text-servimex-navy dark:text-white mb-8">Envíanos un Mensaje</h3>
+                    <form action="#" method="POST" class="space-y-6" id="contact-form" novalidate>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="nombre" class="block text-sm font-semibold text-gray-700 mb-2">Nombre Completo</label>
-                                <input type="text" id="nombre" name="nombre" class="w-full px-5 py-4 bg-servimex-surface border-transparent rounded-xl focus:border-servimex-blue focus:bg-white focus:ring-0 transition-colors" placeholder="Su nombre" required>
+                                <label for="nombre" class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Nombre Completo</label>
+                                <input type="text" id="nombre" name="nombre" class="w-full px-5 py-4 bg-servimex-surface dark:bg-slate-800 border-transparent rounded-xl focus:border-servimex-blue focus:bg-white dark:bg-[#0F172A] focus:ring-0 transition-colors" placeholder="Su nombre" required>
+                                <p class="text-red-500 text-sm mt-1 hidden font-medium" id="error-nombre">Este campo es requerido.</p>
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Correo Electrónico</label>
-                                <input type="email" id="email" name="email" class="w-full px-5 py-4 bg-servimex-surface border-transparent rounded-xl focus:border-servimex-blue focus:bg-white focus:ring-0 transition-colors" placeholder="correo@empresa.com" required>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" class="w-full px-5 py-4 bg-servimex-surface dark:bg-slate-800 border-transparent rounded-xl focus:border-servimex-blue focus:bg-white dark:bg-[#0F172A] focus:ring-0 transition-colors" placeholder="correo@empresa.com" required>
+                                <p class="text-red-500 text-sm mt-1 hidden font-medium" id="error-email">Ingrese un correo válido con '@'.</p>
                             </div>
                         </div>
                         
                         <!-- Row 3: Service Select -->
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2 dark:text-gray-300">Servicio de Interés</label>
+                            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2 dark:text-gray-300">Servicio de Interés</label>
                             <div class="custom-select-wrapper" id="servicio-select-wrapper">
                                 <input type="hidden" name="servicio" id="servicio-input" value="" required>
                                 <div class="custom-select-trigger" id="servicio-trigger" tabindex="0">
@@ -89,16 +124,19 @@
                                     <div class="custom-option" data-value="otro">Otro</div>
                                 </div>
                             </div>
+                            <p class="text-red-500 text-sm mt-1 hidden font-medium" id="error-servicio">Seleccione un servicio de interés.</p>
                         </div>
                         
                         <div>
-                            <label for="asunto" class="block text-sm font-semibold text-gray-700 mb-2 dark:text-gray-300">Asunto del Proyecto</label>
-                            <input type="text" id="asunto" name="asunto" class="w-full px-5 py-4 bg-servimex-surface border-transparent rounded-xl focus:border-servimex-blue focus:bg-white focus:ring-0 transition-colors" placeholder="Montaje Industrial, Cotización..." required>
+                            <label for="asunto" class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2 dark:text-gray-300">Asunto del Proyecto</label>
+                            <input type="text" id="asunto" name="asunto" class="w-full px-5 py-4 bg-servimex-surface dark:bg-slate-800 border-transparent rounded-xl focus:border-servimex-blue focus:bg-white dark:bg-[#0F172A] focus:ring-0 transition-colors" placeholder="Montaje Industrial, Cotización..." required>
+                            <p class="text-red-500 text-sm mt-1 hidden font-medium" id="error-asunto">Este campo es requerido.</p>
                         </div>
                         
                         <div>
-                            <label for="mensaje" class="block text-sm font-semibold text-gray-700 mb-2">Mensaje / Requerimientos</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" class="w-full px-5 py-4 bg-servimex-surface border-transparent rounded-xl focus:border-servimex-blue focus:bg-white focus:ring-0 transition-colors resize-none" placeholder="Describa brevemente su proyecto industrial..." required></textarea>
+                            <label for="mensaje" class="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Mensaje / Requerimientos</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" class="w-full px-5 py-4 bg-servimex-surface dark:bg-slate-800 border-transparent rounded-xl focus:border-servimex-blue focus:bg-white dark:bg-[#0F172A] focus:ring-0 transition-colors resize-none" placeholder="Describa brevemente su proyecto industrial..." required></textarea>
+                            <p class="text-red-500 text-sm mt-1 hidden font-medium" id="error-mensaje">Este campo es requerido.</p>
                         </div>
                         
                         <div class="pt-4">
@@ -151,7 +189,89 @@
                     // Close dropdown
                     wrapper.classList.remove('open');
                     trigger.classList.remove('focus');
+                    
+                    // Clear error if any
+                    const errorSrv = document.getElementById('error-servicio');
+                    if(errorSrv) errorSrv.classList.add('hidden');
+                    trigger.style.borderColor = '';
                 });
+            });
+        }
+
+        // Form Validation Logic
+        const form = document.getElementById('contact-form');
+        
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                let isValid = true;
+                
+                // Fields to validate
+                const fields = [
+                    { id: 'nombre', errorId: 'error-nombre' },
+                    { id: 'email', errorId: 'error-email', isEmail: true },
+                    { id: 'servicio-input', errorId: 'error-servicio' },
+                    { id: 'asunto', errorId: 'error-asunto' },
+                    { id: 'mensaje', errorId: 'error-mensaje' }
+                ];
+                
+                fields.forEach(field => {
+                    const input = document.getElementById(field.id);
+                    const error = document.getElementById(field.errorId);
+                    
+                    if (!input || !error) return;
+                    
+                    let fieldValid = true;
+                    
+                    // Check if empty
+                    if (!input.value.trim()) {
+                        fieldValid = false;
+                    } 
+                    // Check email strict validation (@ required)
+                    else if (field.isEmail && !input.value.includes('@')) {
+                        fieldValid = false;
+                    }
+                    
+                    if (!fieldValid) {
+                        error.classList.remove('hidden');
+                        if (field.id === 'servicio-input') {
+                            const trig = document.getElementById('servicio-trigger');
+                            if(trig) {
+                                trig.style.borderColor = '#ef4444';
+                                trig.style.borderWidth = '1px';
+                                trig.style.borderStyle = 'solid';
+                            }
+                        } else {
+                            input.classList.remove('border-transparent');
+                            input.classList.add('border-red-500', 'ring-1', 'ring-red-500');
+                        }
+                        isValid = false;
+                    } else {
+                        error.classList.add('hidden');
+                        if (field.id === 'servicio-input') {
+                            const trig = document.getElementById('servicio-trigger');
+                            if(trig) trig.style.borderColor = '';
+                        } else {
+                            input.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
+                            input.classList.add('border-transparent');
+                        }
+                    }
+                });
+                
+                if (!isValid) {
+                    e.preventDefault(); // Stop form submission if invalid
+                }
+            });
+            
+            // Add input listeners to remove errors on typing
+            ['nombre', 'email', 'asunto', 'mensaje'].forEach(id => {
+                const input = document.getElementById(id);
+                if (input) {
+                    input.addEventListener('input', function() {
+                        document.getElementById('error-' + id).classList.add('hidden');
+                        this.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
+                        this.classList.add('border-transparent');
+                    });
+                }
             });
         }
     });
