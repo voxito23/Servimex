@@ -8,8 +8,8 @@
     
     <!-- Fix FOUC -->
     <style>
-        html { background-color: #F8FAFC; color: #0A192F; }
-        html.dark { background-color: #0B1120; color: #F8FAFC; }
+        html { background-color: #F8FAFC; color: #0A192F; color-scheme: light; }
+        html.dark { background-color: #0B1120; color: #F8FAFC; color-scheme: dark; }
         #app-content { opacity: 0; transition: opacity 0.5s ease; }
     </style>
     <!-- Anti-FOUC: Apply theme before paint -->
@@ -101,20 +101,44 @@
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mobile-menu-panel absolute w-full shadow-xl bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-gray-800">
-                <div class="px-4 pt-2 pb-6 space-y-2">
-                    <a href="{{ url_for('home') }}" class="mobile-nav-link flex items-center gap-3">
-                        <i class='bx bx-home text-xl'></i> Inicio
+            <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 top-full shadow-2xl bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-800">
+                <div class="px-6 py-6 flex flex-col gap-3">
+                    <a href="{{ url_for('home') }}" class="group flex items-center justify-between p-4 rounded-2xl bg-gray-50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 shadow-sm transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-servimex-blue group-hover:scale-110 transition-transform shadow-inner">
+                                <i class='bx bx-home text-2xl'></i>
+                            </div>
+                            <span class="text-lg font-bold text-gray-900 dark:text-white">Inicio</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-300 dark:text-gray-600 group-hover:text-servimex-blue transition-colors text-sm"></i>
                     </a>
-                    <a href="{{ url_for('servicios') }}" class="mobile-nav-link flex items-center gap-3">
-                        <i class='bx bx-wrench text-xl'></i> Servicios
+                    
+                    <a href="{{ url_for('servicios') }}" class="group flex items-center justify-between p-4 rounded-2xl bg-gray-50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 shadow-sm transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-servimex-blue group-hover:scale-110 transition-transform shadow-inner">
+                                <i class='bx bx-wrench text-2xl'></i>
+                            </div>
+                            <span class="text-lg font-bold text-gray-900 dark:text-white">Servicios</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-300 dark:text-gray-600 group-hover:text-servimex-blue transition-colors text-sm"></i>
                     </a>
-                    <a href="{{ url_for('contacto') }}" class="mobile-nav-link flex items-center gap-3">
-                        <i class='bx bx-envelope text-xl'></i> Contacto
+                    
+                    <a href="{{ url_for('contacto') }}" class="group flex items-center justify-between p-4 rounded-2xl bg-gray-50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 shadow-sm transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-servimex-blue group-hover:scale-110 transition-transform shadow-inner">
+                                <i class='bx bx-envelope text-2xl'></i>
+                            </div>
+                            <span class="text-lg font-bold text-gray-900 dark:text-white">Contacto</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-300 dark:text-gray-600 group-hover:text-servimex-blue transition-colors text-sm"></i>
                     </a>
-                    <a href="{{ url_for('contacto') }}#formulario" class="block w-full text-center bg-servimex-blue hover:bg-blue-700 text-white px-3 py-2 rounded-md text-base font-medium transition-colors">
-                        <i class='bx bx-send mr-1'></i> Cotizar
-                    </a>
+
+                    <div class="pt-2 mt-2">
+                        <a href="{{ url_for('contacto') }}#formulario" class="btn-custom w-full flex items-center justify-center px-6 py-4 rounded-full font-bold text-base uppercase tracking-wider transition-all duration-300">
+                            <span>Cotizar</span>
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -256,20 +280,6 @@
                 } else {
                     navbar.classList.remove('shadow-md');
                 }
-
-                // Ocultar al bajar, mostrar al subir (Smart Header)
-                if (currentScrollY > 100) {
-                    if (currentScrollY > lastScrollY) {
-                        // Scrolling down
-                        navbar.style.transform = 'translateY(-100%)';
-                    } else {
-                        // Scrolling up
-                        navbar.style.transform = 'translateY(0)';
-                    }
-                } else {
-                    // Siempre mostrar si estamos cerca del top
-                    navbar.style.transform = 'translateY(0)';
-                }
                 
                 lastScrollY = currentScrollY;
             });
@@ -300,9 +310,11 @@
                 if (isDark) {
                     document.documentElement.classList.add('dark');
                     document.documentElement.style.backgroundColor = '#0B1120';
+                    document.documentElement.style.colorScheme = 'dark';
                 } else {
                     document.documentElement.classList.remove('dark');
                     document.documentElement.style.backgroundColor = '#F8FAFC';
+                    document.documentElement.style.colorScheme = 'light';
                 }
                 applyThemeIcons(isDark);
             }
