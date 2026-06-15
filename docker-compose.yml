@@ -6,7 +6,7 @@ services:
     container_name: servimex_flask
     restart: always
     ports:
-      - "5000:5000"
+      - "5010:5010"
     volumes:
       - .:/app
     env_file:
